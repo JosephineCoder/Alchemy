@@ -59,8 +59,8 @@ function findElementById(id) {
 }
 
 function combineByName(name1, name2) {
-    let element1 = findElementByName(name1);
-    let element2 = findElementByName(name2);
+    const element1 = findElementByName(name1);
+    const element2 = findElementByName(name2);
     if (element1 === false || element2 === false) {
         return [];
     }
@@ -89,8 +89,8 @@ function displayAllElements()
 
 function duplicateElement(element)
 {
-    let theName = $(element).attr('element-type');
-    let theElement = displayElement(theName);
+    const theName = $(element).attr('element-type');
+    const theElement = displayElement(theName);
     theElement.appendTo('#playfield');
     return theElement;
 }
@@ -98,15 +98,15 @@ function duplicateElement(element)
 function displayElement(elementName)
 {
     // let playfield = $('#playfield');
-    let theDiv = $('<div/>', {
+    const theDiv = $('<div/>', {
         'class': 'element ' + elementName
     }).draggable({ stack: ".element"});
 
     theDiv.text(elementName);
 
     theDiv.dblclick(function (event) {
-        let theName = $(this).attr('element-type');
-        let element = displayElement(theName);
+        const theName = $(this).attr('element-type');
+        const element = displayElement(theName);
         element.appendTo('#playfield');
         // console.log(event);
     });
@@ -115,11 +115,11 @@ function displayElement(elementName)
         hoverClass: 'hovering',
         greedy: true,
         drop: function(event, ui) {
-            let droppedOn = ($(this).attr('element-type'));
-            let dropped = ($(ui.draggable).attr('element-type'));
+            const droppedOn = ($(this).attr('element-type'));
+            const dropped = ($(ui.draggable).attr('element-type'));
             // console.log(dropped + " was dropped on " + droppedOn);
 
-            let results = combineByName(dropped, droppedOn);
+            const results = combineByName(dropped, droppedOn);
             if (results.length != 0) {
                 // remove the elements
                 $(this).fadeOut().remove();
@@ -146,7 +146,7 @@ function cheat(name1, name2) {
 
 function dropCombine(dropped, droppedOn)
 {
-    let results = combineByName(dropped.attr('element-type'), droppedOn.attr('element-type'));
+    const results = combineByName(dropped.attr('element-type'), droppedOn.attr('element-type'));
     if (results.length != 0) {
         $(dropped).fadeOut().remove();
         $(droppedOn).fadeOut().remove();
@@ -180,7 +180,7 @@ function addToSidebar(element)
 
 function inSidebar(element)
 {
-    let elementName = $(element).attr('element-type');
+    const elementName = $(element).attr('element-type');
     for (let i = 0; i < sidebarElements.length; i++) {
         if (elementName == sidebarElements[i]) {
             return true;
@@ -201,7 +201,7 @@ function prepareGarbage()
 {
     $('#trash').droppable({
         drop: function(event, ui) {
-            let dropped = $(ui.draggable);
+            const dropped = $(ui.draggable);
             $(dropped).toggle('explode').remove();
             playSound('no_want');
         }
@@ -228,7 +228,7 @@ $(function() {
     displayPrimaryElements();
 });
 
-let sounds = [];
+const sounds = [];
 
 
 function playSound(sound)
