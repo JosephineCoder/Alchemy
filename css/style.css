@@ -1,0 +1,169 @@
+* { 
+    color: yellow;
+    font-family: arial;
+    /*background: lightgray;*/
+ }
+
+html {
+    height: 100%;
+    background: #cedbe9; /* Old browsers */
+    background: -moz-linear-gradient(top, #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedbe9), color-stop(17%,#aac5de), color-stop(50%,#6199c7), color-stop(51%,#3a84c3), color-stop(59%,#419ad6), color-stop(71%,#4bb8f0), color-stop(84%,#3a8bc2), color-stop(100%,#26558b)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=0 ); /* IE6-9 */
+}
+
+#playfield {
+    position: relative;
+    margin-right: 110px;
+}
+
+.element {
+    height: 74px;
+    width: 74px;
+    display: inline-block;
+    text-align: center;
+    color: black;
+    position: absolute;
+}
+
+.hovering {
+    border: 1px solid red;
+}
+
+#sidebar {
+    height: 100%;
+    width: 80px;
+    float: right;
+    background-color: lightblue;
+    -webkit-box-shadow: -7px 0px 5px 0px rgba(38,85,139,1);
+    -moz-box-shadow: -7px 0px 5px 0px rgba(38,85,139,1);
+    box-shadow: -7px 0px 5px 0px rgba(38,85,139,1);
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: scroll;
+}
+
+#score {
+    font-size: 3em;
+    font-family: arial;
+    position: absolute;
+    bottom: 0;
+    color: black;
+}
+
+#trash {
+    background: url(../images/garbage_can.png);
+    height: 78px;
+    width: 56px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 110px;
+    margin-bottom: 10px;
+}
+
+.water { background: url(../images/water.png); }
+.air { background: url(../images/air.png); }
+.earth { background: url(../images/earth.png); }
+.fire { background: url(../images/fire.png); }
+.steam { background: url(../images/steam.png); }
+.pressure { background: url(../images/pressure.png); }
+.lava { background: url(../images/lava.png); }
+.rubiks_cube { background: url(../images/rubiks_cube.png); }
+.rain  { background: url(../images/rain.png); }
+.cloud  { background: url(../images/cloud.png); }
+.sky { background: url(../images/sky.png); }
+.sun { background: url(../images/sun.png); }
+.rainbow { background: url(../images/rainbow.png); }
+.cube { background: url(../images/cube.png); }
+.metal { background: url(../images/metal.png); }
+.tool { background: url(../images/tool.png); }
+.human { background: url(../images/human.png); }
+.life { background: url(../images/life.png); }
+.stone { background: url(../images/stone.png); }
+.paper { background: url(../images/paper.png); }
+.wood { background: url(../images/wood.png); }
+.angel { background: url(../images/angel.png); }
+.energy { background: url(../images/energy.png); }
+.swamp { background: url(../images/swamp.png); }
+.plant { background: url(../images/plant.png); }
+.mud { background: url(../images/mud.png); }
+.tree { background: url(../images/tree.png); }
+.time { background: url(../images/time.png); }
+.sand { background: url(../images/sand.png); }
+.glass { background: url(../images/glass.png); }
+.hourglass { background: url(../images/hourglass.png); }
+.wind { background: url(../images/wind.png); }
+.sandpaper { background: url(../images/sandpaper.png); }
+.aquarium { background: url(../images/aquarium.png); }
+.dust { background: url(../images/dust.png); }
+.gunpowder  { background: url(../images/gunpowder.png); }
+.bullet { background: url(../images/bullet.png); }
+.gun { background: url(../images/gun.png); }
+.flamethrower { background: url(../images/flamethrower.png); }
+.sunflower { background: url(../images/sunflower.png); }
+.oxygen { background: url(../images/oxygen.png); }
+.flower { background: url(../images/flower.png); }
+.garden { background: url(../images/garden.png); }
+.oil { background: url(../images/oil.png); }
+.soap { background: url(../images/soap.png); }
+.ash { background: url(../images/ash.png); }
+.volcano { background: url(../images/volcano.png); }
+.mountain { background: url(../images/mountain.png); }
+.earthquake { background: url(../images/earthquake.png); }
+.hay { background: url(../images/hay.png); }
+.scythe { background: url(../images/scythe.png); }
+.farmer { background: url(../images/farmer.png); }
+.scissors { background: url(../images/scissors.png); }
+.blade { background: url(../images/blade.png); }
+.wheat { background: url(../images/wheat.png); }
+.field { background: url(../images/field.png); }
+.grass { background: url(../images/grass.png); }
+.pitchfork { background: url(../images/pitchfork.png); }
+.leaf { background: url(../images/leaf.png); }
+.tea { background: url(../images/tea.png); }
+.corpse { background: url(../images/corpse.png); }
+.zombie { background: url(../images/zombie.png); }
+.grimreaper { background: url(../images/grimreaper.png); }
+.lawnmower { background: url(../images/lawnmower.png); }
+.ferret { background: url(../images/ferret.png); }
+.toy { background: url(../images/toy.png); }
+.wire { background: url(../images/wire.png); }
+.wild_animal { background: url(../images/wild_animal.png); }
+.forest { background: url(../images/forest.png); }
+.slinky { background: url(../images/slinky.png); }
+.livestock { background: url(../images/livestock.png); }
+.milk { background: url(../images/milk.png); }
+.cheese { background: url(../images/cheese.png); }
+.mouse { background: url(../images/mouse.png); }
+.pikachu  { background: url(../images/pikachu.png); }
+.cow { background: url(../images/cow.png); }
+.electricity { background: url(../images/electricity.png); }
+.bird { background: url(../images/bird.png); }
+.desert { background: url(../images/desert.png); }
+.camel { background: url(../images/camel.png); }
+.coffee { background: url(../images/coffee.png); }
+.bean { background: url(../images/bean.png); }
+.jewel { background: url(../images/jewel.png); }
+.coal { background: url(../images/coal.png); }
+.blake_jewell { background: url(../images/blake_jewell.png); }
+.cotton { background: url(../images/cotton.png); }
+.thread  { background: url(../images/thread.png); }
+.fabric { background: url(../images/fabric.png); }
+.ribbon { background: url(../images/ribbon.png); }
+.amelie_nguyen { background: url(../images/amelie_nguyen.png); }
+.spring { background: url(../images/spring.png); }
+.kangaroo { background: url(../images/kangaroo.png); }
+.joey_stockton { background: url(../images/joey_stockton.png); }
+.glasses { background: url(../images/glasses.png); }
+.cat { background: url(../images/cat.png); }
+.monkey { background: url(../images/monkey.png); }
+.banana { background: url(../images/banana.png); }
+.fruit { background: url(../images/fruit.png); }
+.juice { background: url(../images/juice.png); }
+.blender { background: url(../images/blender.png); }
