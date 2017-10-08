@@ -3,17 +3,24 @@ let sidebarElements = [];
 
 function allowPrimaryElements(debug)
 {
-   if (allowedElements.length !== 0)
-   {
-    return;
-   }
-    for (let index = 0; index < elements.length; index++) {
-        if (elements[index].primary !== true && !debug) {
-
-            continue;
-        }
-        allowedElements.push(elements[index].id);
+    if (allowedElements.length !== 0)
+    {
+        return;
     }
+
+    elements.filter(
+        (e) => e.primary || debug || true
+    ).forEach(
+        (e) => allowedElements.push(e.id)
+    );
+
+    // for (let index = 0; index < elements.length; index++) {
+    //     if (elements[index].primary !== true && !debug) {
+
+    //         continue;
+    //     }
+    //     allowedElements.push(elements[index].id);
+    // }
 }
 
 
