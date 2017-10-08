@@ -153,17 +153,11 @@ function dropCombine(dropped, droppedOn)
 
     results.forEach(
         (e) => {
-            displayElement(e.name).appendTo('#playfield');
-            addToSidebar(displayElement(e.name));
+            const element = displayElement(e.name)
+            element.appendTo('#playfield');
+            addToSidebar(element);
         }
     )
-
-
-
-    // for (let i = 0; i < results.length; i++) {
-    //     displayElement(results[i].name).appendTo('#playfield');
-    //     addToSidebar(displayElement(results[i].name));
-    // }
 }
 
 function addToSidebar(element)
