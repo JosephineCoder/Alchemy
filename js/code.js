@@ -13,14 +13,6 @@ function allowPrimaryElements(debug)
     ).forEach(
         (e) => allowedElements.push(e.id)
     );
-
-    // for (let index = 0; index < elements.length; index++) {
-    //     if (elements[index].primary !== true && !debug) {
-
-    //         continue;
-    //     }
-    //     allowedElements.push(elements[index].id);
-    // }
 }
 
 
