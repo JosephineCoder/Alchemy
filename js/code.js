@@ -9,7 +9,7 @@ function allowPrimaryElements(debug)
     }
 
     elements.filter(
-        (e) => e.primary || debug || true
+        (e) => e.primary || debug 
     ).forEach(
         (e) => allowedElements.push(e.id)
     );
@@ -150,10 +150,20 @@ function dropCombine(dropped, droppedOn)
         $(dropped).fadeOut().remove();
         $(droppedOn).fadeOut().remove();
     }
-    for (let i = 0; i < results.length; i++) {
-        displayElement(results[i].name).appendTo('#playfield');
-        addToSidebar(displayElement(results[i].name));
-    }
+
+    results.forEach(
+        (e) => {
+            displayElement(e.name).appendTo('#playfield');
+            addToSidebar(displayElement(e.name));
+        }
+    )
+
+
+
+    // for (let i = 0; i < results.length; i++) {
+    //     displayElement(results[i].name).appendTo('#playfield');
+    //     addToSidebar(displayElement(results[i].name));
+    // }
 }
 
 function addToSidebar(element)
