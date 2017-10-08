@@ -3,17 +3,16 @@ let sidebarElements = [];
 
 function allowPrimaryElements(debug)
 {
-   if (allowedElements.length !== 0)
-   {
-    return;
-   }
-    for (let index = 0; index < elements.length; index++) {
-        if (elements[index].primary !== true && !debug) {
-
-            continue;
-        }
-        allowedElements.push(elements[index].id);
+    if (allowedElements.length !== 0)
+    {
+        return;
     }
+
+    elements.filter(
+        (e) => e.primary || debug 
+    ).forEach(
+        (e) => allowedElements.push(e.id)
+    );
 }
 
 
@@ -151,10 +150,14 @@ function dropCombine(dropped, droppedOn)
         $(dropped).fadeOut().remove();
         $(droppedOn).fadeOut().remove();
     }
-    for (let i = 0; i < results.length; i++) {
-        displayElement(results[i].name).appendTo('#playfield');
-        addToSidebar(displayElement(results[i].name));
-    }
+
+    results.forEach(
+        (e) => {
+            const element = displayElement(e.name)
+            element.appendTo('#playfield');
+            addToSidebar(element);
+        }
+    )
 }
 
 function addToSidebar(element)
