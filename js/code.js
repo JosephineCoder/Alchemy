@@ -184,13 +184,10 @@ function addToSidebar(element)
 function inSidebar(element)
 {
     const elementName = $(element).attr('element-type');
-    for (let i = 0; i < sidebarElements.length; i++) {
-        if (elementName == sidebarElements[i]) {
-            return true;
-        }
-    }
-
-    return false;
+    
+    return sidebarElements.find(
+        (e) => elementName === e
+    ) !== undefined
 }
 
 function initializeGame()
